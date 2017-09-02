@@ -7,6 +7,10 @@ function isPositionOutsideArea(area, position) {
     );
 }
 
+function arePositionsEqual(pos1, pos2) {
+    return pos1.x === pos2.x && pos1.y === pos2.y;
+}
+
 function move(position) {
     switch (position.orientation) {
         case 'N':
@@ -25,10 +29,15 @@ function move(position) {
 module.exports = function (position, area, robotScents) {
     const newPosition = move(position);
     if (isPositionOutsideArea(area, newPosition)) {
-        return {
-            ...position,
-            lost: true
-        };
+        const protectedByScent = robotScents.some(scent => arePositionsEqual(position, scent));
+        if (protectedByScent) {
+            return position;
+        } else {
+            return {
+                ...position,
+                lost: true
+            };
+        }
     } else {
         return newPosition;
     }
