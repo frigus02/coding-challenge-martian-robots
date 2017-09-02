@@ -18,7 +18,7 @@ describe('Samples', function () {
 
             const output = program(input);
 
-            assert.equal(expectedOutput, output);
+            assert.equal(output, expectedOutput.replace('\r\n', '\n'));
         });
     }
 });
