@@ -1,0 +1,20 @@
+{
+  "name": "coding-challenge-martian-robots",
+  "version": "0.0.1",
+  "description": "Coding challenge 'Martian Robots' (by Red Badger)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frigus02/coding-challenge-martian-robots.git"
+  },
+  "author": "Jan Kühle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frigus02/coding-challenge-martian-robots/issues"
+  },
+  "homepage": "https://github.com/frigus02/coding-challenge-martian-robots#readme",
+  "private": true
+}
