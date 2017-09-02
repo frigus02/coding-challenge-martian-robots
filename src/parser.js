@@ -23,6 +23,34 @@ function parseRobotInstructions(line) {
     return line.trim().split('');
 }
 
+/**
+ * Parses the specified input string.
+ * 
+ * The first line are space separated upper-right coordinates of the area.
+ * 
+ * This is followed by 2 lines per robot. The first robot line are space
+ * separated coordindates of its start position and its orientation. The
+ * second robot line are the instructions.
+ * 
+ * Example:
+ * 5 3
+ * 1 1 N
+ * FFRRFLRLF
+ * 2 2 E
+ * RRRFF
+ * 
+ * Returns the parsed input in the format:
+ * {
+ *     area: { top: 3, right: 5, bottom: 0, left: 0 },
+ *     robots: [
+ *         {
+ *             position: { x: 1, y: 1, orientation: 'N' },
+ *             instructions: ['F', 'R', ...]
+ *         },
+ *         ...
+ *     ]
+ * }
+ */
 exports.parse = function (input) {
     const lines = input.split('\n');
     

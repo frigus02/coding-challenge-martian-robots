@@ -4,6 +4,15 @@ const commands = {
     'F': require('./commands/forward')
 };
 
+/**
+ * Processes the instructions for each robot one by one. Robots are processed
+ * one after another.
+ * 
+ * If a robot is lost after an instructions, it's scent is collected and the
+ * remaining instructions are ignored.
+ * 
+ * Returns the modified state after all robots have been processed.
+ */
 exports.process = function (state) {
     state.robotScents = [];
 
