@@ -16,7 +16,7 @@ describe('Samples', function () {
             const input = await readFile(samplePath + file, 'utf-8');
             const expectedOutput = await readFile(samplePath + file.replace('.in.txt', '.out.txt'), 'utf-8');
 
-            const output = program(input);
+            const output = program.processString(input);
 
             assert.equal(output, expectedOutput.replace(/\r\n/g, '\n'));
         });
